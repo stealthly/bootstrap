@@ -25,7 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "precise64" do |precise64|
     precise64.vm.network :private_network, ip: "192.168.95.75"
     precise64.vm.provider :virtualbox do |vb|
-      vb.customize ["modifyvm", :id, "--memory", "1024"]
+      vb.customize ["modifyvm", :id, "--memory", "2048"]
     end
     precise64.vm.provision "shell", path: "scripts/ubuntu/bootstrap.sh", :args => "6"
   end
